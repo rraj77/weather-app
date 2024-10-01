@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Stack, Button, IconButton } from '@mui/material';
+import { Stack, IconButton } from '@mui/material';
 import { styled } from '@mui/system';
 import { useDispatch } from 'react-redux';
 import { toggleUnit } from '../store/weatherSlice';
