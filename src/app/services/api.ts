@@ -1,14 +1,13 @@
 import axios from 'axios';
 
-const WEATHER_API_KEY = 'd84613cf0878418eb8460652242709';
-const UNSPLASH_ACCESS_KEY = 'aNjPyGx3aFncyQef19eZDlfjp9aIEHTP7pT5IB03sfg';
+const WEATHER_API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+const UNSPLASH_ACCESS_KEY = process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY;
 
 export const fetchWeather = async (city: string) => {
   const response = await axios.get(
     `http://api.weatherapi.com/v1/forecast.json?key=${WEATHER_API_KEY}&q=${city}&days=7`
   );
 
-  console.log(response, 'response')
   return response.data;
 };
 
