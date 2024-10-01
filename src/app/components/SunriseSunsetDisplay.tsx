@@ -36,7 +36,7 @@ const calculateTimePassed = (targetTime: string): string => {
     now.getMonth(),
     now.getDate(),
     hours,
-    minutes
+    minutes = minutes
   );
 
   const diffInSeconds: number = Math.floor(

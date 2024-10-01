@@ -1,6 +1,5 @@
 import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
-import CustomSwitchProgress from './CustomSwitchProgress';
 import CustomProgressBar from './CustomSwitchProgress';
 
 type HumidityDisplayProps = {
@@ -23,7 +22,10 @@ const HumidityDisplay = ({ humidity }: HumidityDisplayProps) => {
   return (
     <Stack direction="row" justifyContent="space-between">
       <Stack gap={4}>
-        <Typography fontSize="32px">{humidity}%</Typography>
+        <Box gap="3px" sx={{ display: 'flex' }}>
+          <Typography variant="h3">{humidity}</Typography>
+          <Typography variant='h6'>%</Typography>
+        </Box>
         <Typography>
           {text} {icon}
         </Typography>

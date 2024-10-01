@@ -5,9 +5,17 @@ type UVIndexDisplayProps = {
   uvIndex: number;
 };
 
-const CustomTick = ({ x, y, payload }) => (
+type CustomTickProps = {
+  x: number;
+  y: number;
+  payload: {
+    value: number;
+  };
+};
+
+const CustomTick = ({ x, y, payload }: CustomTickProps) => (
   <text x={x} y={y} fill="#666" fontSize={10} textAnchor="middle">
-    {payload.value}
+    {payload.value % 3 === 0 ? payload.value : ''}
   </text>
 );
 
@@ -35,10 +43,9 @@ function UVIndexDisplay({ uvIndex }: UVIndexDisplayProps) {
           type="number"
           domain={[0, 12]}
           tick={CustomTick}
-          ticks={[0, 3, 6, 9, 12]}
           tickSize={-5}
         />
-        <RadialBar min={15}fill='#dsfds' background  dataKey="value" />
+        <RadialBar min={15} fill="#FFB800" background dataKey="value" />
       </RadialBarChart>
 
       <Typography
@@ -46,7 +53,7 @@ function UVIndexDisplay({ uvIndex }: UVIndexDisplayProps) {
         sx={{
           position: 'absolute',
           top: '90%',
-          left: '50%',
+          left: '55%',
           transform: 'translate(-50%, -50%)',
           fontWeight: 'bold',
         }}

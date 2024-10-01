@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React from 'react';
 
 type VisibilityDisplayProps = {
@@ -20,7 +20,10 @@ const VisibilityDisplay = ({ visibility }: VisibilityDisplayProps) => {
 
   return (
     <>
-      <Typography fontSize="32px">{visibility} km</Typography>
+      <Box gap="3px" sx={{ alignItems: 'baseline', display: 'flex' }}>
+        <Typography variant="h3">{visibility}</Typography>
+        <Typography>km</Typography>
+      </Box>
       <span className="visibility-text">
         {text} {icon}
       </span>

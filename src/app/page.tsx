@@ -9,7 +9,7 @@ function IndexPage() {
     router.push('/dashboard')
   }, [])
 
-  return <span>Redirecting to Admin Console</span>
+  return <span>Redirecting to Datshboard Console</span>
 }
 
 export default IndexPage

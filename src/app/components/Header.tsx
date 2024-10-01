@@ -1,6 +1,5 @@
 import { Stack, Tab, Tabs, styled, tabClasses } from '@mui/material';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import UnitToggle from './UnitToggle';
 import Image from 'next/image';
 
@@ -25,8 +24,6 @@ const TabsStyled = styled(Tabs)(() => ({
 }));
 
 function Header() {
-  const dispatch = useDispatch();
-
   const [tabValue, setTabValue] = useState('week');
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {

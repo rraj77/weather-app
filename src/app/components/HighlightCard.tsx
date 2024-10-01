@@ -1,8 +1,6 @@
 import React from 'react';
-import { Typography, Box, styled } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
-import { RadialBarChart, RadialBar, PolarAngleAxis } from 'recharts';
 import HumidityDisplay from './HumidityDisplay';
 import VisibilityDisplay from './VisibilityDisplay';
 import AirQualityDisplay from './AirQualityDisplay';

@@ -12,11 +12,11 @@ function SearchBar({ setSearch }: SearchBarProps) {
   const [cities, setCities] = useState<{ name: string }[]>([]);
 
   useEffect(() => {
-    // Fetching all cities (for a specific country code, e.g., 'US')
-    const allCities = City.getCitiesOfCountry('IN')?.map((data) => ({
-      name: data.name,
-    }));
-    allCities && setCities(allCities);
+    const allCities = City.getCitiesOfCountry('IN');
+
+    if (allCities) {
+      setCities(allCities.map((data) => ({ name: data.name })));
+    }
   }, []);
 
   return (
