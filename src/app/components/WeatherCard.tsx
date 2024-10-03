@@ -9,14 +9,14 @@ const WeatherCard = () => {
   const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   return (
-    <Stack flexDirection='row' flexWrap='wrap' gap={1}>
+    <Stack direction="row" gap={1}>
       {forecast.map((data, index) => {
         return (
           <Card
             key={index}
             sx={{
               borderRadius: '20px',
-              // width: '100%',
+              width: '100%',
               justifyContent: 'center',
             }}
             elevation={0}
